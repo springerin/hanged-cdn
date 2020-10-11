@@ -17,6 +17,8 @@
 	<div id="app">
 		<p v-bind:class="{ error: isError }" v-bind:style="{ fontSize: (increment + 1) + 'em', 'background-color': bgColor }">{{ message }} ({{ increment }})</p>
 		<p>{{ messageReverse }}</p>
+		<p v-if="increment < 4">Modifica il messaggio :)</p>
+		<p v-else>Hai modificato il messaggio troppe volte :(</p>
 	</div>
 	
 	<script src="src/index.js"></script>
