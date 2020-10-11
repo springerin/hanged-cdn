@@ -3,11 +3,18 @@
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!'
+    message: 'Hello Vue!',
+    increment: 0
   },
   computed: {
     messageReverse() {
       return this.message.split('').reverse().join('')
+    }
+  },
+  watch: {
+    message() {
+      // use app.message into your console to change the message value and see watcher in action
+      this.increment++
     }
   },
 });
