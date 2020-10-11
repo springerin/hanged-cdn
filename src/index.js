@@ -4,11 +4,15 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
-    increment: 0
+    increment: 0,
+    bgColor: 'orange'
   },
   computed: {
     messageReverse() {
       return this.message.split('').reverse().join('')
+    },
+    isError() {
+      return this.increment > 3
     }
   },
   watch: {

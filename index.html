@@ -6,11 +6,16 @@
 	<meta charset="UTF-8" />
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" href="src/styles.scss" />
+	<style type="text/css">
+	.error {
+		color: red;
+	}
+	</style>
 </head>
 
 <body>
 	<div id="app">
-		<p>{{ message }} ({{ increment }})</p>
+		<p v-bind:class="{ error: isError }" v-bind:style="{ fontSize: (increment + 1) + 'em', 'background-color': bgColor }">{{ message }} ({{ increment }})</p>
 		<p>{{ messageReverse }}</p>
 	</div>
 	
