@@ -20,6 +20,12 @@
 		<p v-if="increment <= 0">Modifica il messaggio :)</p>
 		<p v-else-if="increment > 0 && increment < 4">Hai modificato il messaggio alcune volte :|</p>
 		<p v-else>Hai modificato il messaggio troppe volte :(</p>
+
+		<ul>
+			<li v-for="(item, index) in list">
+				{{ index }}. {{ item }}
+			</li>
+		</ul>
 	</div>
 	
 	<script src="src/index.js"></script>

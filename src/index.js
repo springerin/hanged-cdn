@@ -5,7 +5,8 @@ var app = new Vue({
   data: {
     message: 'Hello Vue!',
     increment: 0,
-    bgColor: 'orange'
+    bgColor: 'orange',
+    list: ['mele', 'banane']
   },
   computed: {
     messageReverse() {
