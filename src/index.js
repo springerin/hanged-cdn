@@ -6,7 +6,10 @@ var app = new Vue({
     message: 'Hello Vue!',
     increment: 0,
     bgColor: 'orange',
-    list: ['mele', 'banane']
+    list: ['mele', 'banane'],
+    checkedItems: [],
+    radio: '',
+    select: ''
   },
   computed: {
     messageReverse() {

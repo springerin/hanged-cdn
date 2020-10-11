@@ -23,12 +23,23 @@
 
 		<ul>
 			<li v-for="(item, index) in list">
-				{{ index }}. {{ item }}
+				<input type="checkbox" :value="item" v-model="checkedItems"> <input type="radio" v-model="radio" :value="item"> {{ index }}. {{ item }}
 			</li>
 		</ul>
+		<p>CHECKBOX: {{ checkedItems }}</p>
+		<p>RADIO: {{ radio }}</p>
 
 		<button v-on:click="sayHi">Saluta</button>
 		<button v-on:click="sayHiTo()">Salutami</button>
+
+		<input v-model="message" type="text" />
+		<input :value="message" @input="message = $event.target.value" type="text" />
+		<select v-model="select">
+			<option></option>
+			<option v-for="item in list" :value="item">{{ item }}</option>
+		</select>
+		SELECT: {{ select }}
+		 
 	</div>
 	
 	<script src="src/index.js"></script>
