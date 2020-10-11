@@ -22,6 +22,17 @@ var app = new Vue({
       this.increment++
     }
   },
+  methods: {
+    sayHi(event) {
+      // original js event
+      console.log(event)
+      alert('Ciao'+name+'!')
+    },
+    sayHiTo(name) {
+      var nameToPrint = name || this.list[1]
+      alert('Ciao '+ nameToPrint +'!')
+    }
+  },
 });
 
 // this console log it's for debugging, it will be removed later on
