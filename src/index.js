@@ -30,6 +30,12 @@ var app = new Vue({
       }
       if (this.badLetters.length === 6) this.gameover = true
       this.letter2check = ''
+    },
+    reset() {
+      this.goodLetters = []
+      this.badLetters = []
+      this.usedAttemps = 0
+      this.gameover = false
     }
   },
 }).$mount('#app');
