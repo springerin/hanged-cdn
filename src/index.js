@@ -25,6 +25,30 @@ var app = new Vue({
       this.increment++
     }
   },
+  beforeCreate() {
+    console.log('beforeCreate', this, this.message, this.$el)
+  },
+  created() {
+    console.log('created', this, this.message, this.$el)
+  },
+  beforeMount() {
+    console.log('beforeMount', this, this.message, this.$el)
+  },
+  mounted() {
+    console.log('mounted', this, this.message, this.$el)
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate', this, this.message)
+  },
+  updated() {
+    console.log('updated', this, this.message)
+  },
+  beforeDestroy() {
+    console.log('beforeDestroy', this, this.message)
+  },
+  destroyed() {
+    console.log('destroyed', this, this.message)
+  },
   methods: {
     sayHi(event) {
       // original js event
