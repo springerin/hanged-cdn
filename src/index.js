@@ -3,7 +3,8 @@
 var app = new Vue({
   data: {
     coins: '0 monete',
-    word2discover: 'meraviglioso',
+    words: ['stupendo', 'magnifico', 'meraviglioso', 'incredibile','fantastico'],
+    word2discover: '',
     letter2check: '',
     goodLetters: [],
     badLetters: [],
@@ -19,7 +20,17 @@ var app = new Vue({
       return `Indovina la parola entro <strong>${this.totalAttemps - this.usedAttemps} tentativi</strong>`
     }
   },
+  created() {
+    this.start()
+  },
   methods: {
+    start() {
+      // reset previous game
+      this.reset()
+      // choose another word
+      const randNum = Math.floor(Math.random() * this.words.length)
+      this.word2discover = this.words[randNum]
+    },
     confirm() {
       this.usedAttemps++
       const letter = this.letter2check.toLowerCase()
